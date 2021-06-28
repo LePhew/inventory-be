@@ -1,3 +1,4 @@
+import { ProductState } from "src/enums/ProductState";
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { ProductCategoryEntity } from "./category.entity";
 import { ManufacturerEntity } from "./manufacturer.entity";
@@ -25,16 +26,16 @@ export class ProductEntity {
     @Column()
     sku: string;
 
-    @Column()
-    type: string;
-
-    @Column()
+    @Column({ nullable: true })
     cost: number;
 
-    @Column()
+    @Column({ nullable: true })
     selling_price: number;
 
     @Column()
-    sold: number;
+    stock: number;
+
+    @Column({ enum: ProductState })
+    state: number;
 
 }

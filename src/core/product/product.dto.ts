@@ -8,6 +8,5 @@ export class ProductDTO {
     sold: number = 0;
     type?: string;
     manufacturer_id?: string;
-    manufacturer?: string;
     category_id?: string;
 }
