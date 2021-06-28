@@ -7,6 +7,9 @@ export class OrderEntity {
     id: string;
 
     @Column()
+    customer_id: string;
+
+    @Column()
     customer: string;
 
     @CreateDateColumn()

@@ -8,4 +8,7 @@ export class RoleEntity {
 
     @Column()
     name: string;
+
+    @Column({ nullable: true })
+    description: string;
 }

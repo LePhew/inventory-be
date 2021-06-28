@@ -12,10 +12,10 @@ export class UserEntity {
     @Column({ unique: true })
     email: string;
 
-    @Column()
+    @Column({ nullable: true })
     company_id: string;
 
-    @Column()
+    @Column({ nullable: true })
     company: string;
 
     @Column({ unique: true })

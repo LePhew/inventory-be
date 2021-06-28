@@ -1,4 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { ProductCategoryEntity } from "./category.entity";
+import { ManufacturerEntity } from "./manufacturer.entity";
 
 @Entity('product')
 export class ProductEntity {
@@ -12,11 +14,13 @@ export class ProductEntity {
     @Column()
     description: string;
 
-    @Column()
-    manufacturer_id: string;
-
-    @Column()
+    @ManyToOne(() => ManufacturerEntity)
+    @JoinColumn({ name: "manufacturer_id" })
     manufacturer: string;
+
+    @ManyToOne(() => ProductCategoryEntity)
+    @JoinColumn({ name: "category_id" })
+    category: ProductCategoryEntity;
 
     @Column()
     sku: string;
@@ -33,6 +37,4 @@ export class ProductEntity {
     @Column()
     sold: number;
 
-    @Column()
-    category: string;
 }
