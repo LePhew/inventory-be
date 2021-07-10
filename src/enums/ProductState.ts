@@ -1,3 +1,5 @@
 export enum ProductState {
-    ACTIVE, OUTOFSTOCK, DISABLED
+    Active = "Active",
+    Disabled = "Disabled",
+    Outofstock = "Out of stock"
 }

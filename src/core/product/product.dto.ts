@@ -1,3 +1,5 @@
+import { ProductState } from "src/enums/ProductState";
+
 export class ProductDTO {
 
     name: string;
@@ -6,7 +8,8 @@ export class ProductDTO {
     cost: number = 0;
     selling_price: number = 0;
     sold: number = 0;
-    type?: string;
+    state: ProductState;
+    stock?: number = 0;
     manufacturer_id?: string;
     category_id?: string;
 }

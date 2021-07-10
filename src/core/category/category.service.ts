@@ -12,13 +12,11 @@ export class CategoryService {
     ) { }
 
     async findAll(): Promise<any> {
-        return await this._categoryRepository.find();
+        return await this._categoryRepository.find({ relations: ["products"] });
     }
 
     async findOne(id: string): Promise<any> {
-        return await this._categoryRepository.find({
-            where: { id }
-        })
+        return await this._categoryRepository.findOne(id);
     }
 
     async create(data: CategoryDTO): Promise<any> {
